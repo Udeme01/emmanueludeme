@@ -13,11 +13,11 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "emmanueludeme | Software Engineer",
-    template: "%s | emmanueludeme",
+    default: "theQuietdev studios",
+    template: "%s | theQuietdev studios",
   },
   description:
-    "Helping businesses build trust, reach more customers, and work smarter through thoughtful digital experiences, e-commerce, and custom software solutions.",
+    "Helping businesses and startups get found, get trusted and get paid online. Based in Lagos, Nigeria.",
 };
 
 export default function RootLayout({ children }) {
