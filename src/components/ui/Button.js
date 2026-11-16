@@ -11,20 +11,25 @@ export default function Button({
   buttonText,
 }) {
   const base =
-    "rounded-md px-7 py-3.5 text-center text-[16px] font-medium transition focus:outline-none focus:ring-2 focus:ring-forest/50";
+    "rounded-md px-7 py-3.5 text-center text-[16px] font-medium transition";
 
-  const solid =
-    "bg-ink text-bright hover:brightness-95 hover:bg-bright hover:text-ink";
+  const variants = {
+    solid: `${base} bg-ink hover:brightness-95 text-paper hover:bg-forest`,
 
-  const outline =
-    "border border-forest/15 text-ink hover:bg-bright/10 hover:border-forest/50";
+    outline: `${base} border border-forest/15 text-ink hover:bg-bright/10 hover:border-forest/50`,
+
+    text: `mt-8 inline-block font-semibold text-forest underline underline-offset-4 hover:text-ink`,
+    bright: `${base} bg-bright text-ink hover:brightness-95`,
+    textLight:
+      "inline-block font-semibold text-paper underline underline-offset-4 transition hover:text-bright",
+  };
 
   return (
     <Link
       href={href}
       type="button"
       onClick={onClick}
-      className={`${base} ${variant === "solid" ? solid : outline} ${className}`}
+      className={`${variants[variant] ?? variants.solid} ${className}`}
     >
       {buttonText || children}
     </Link>
